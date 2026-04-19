@@ -6,7 +6,7 @@
 
 This repository contains my cybersecurity and pentesting portfolio: hands-on labs, writeups, tools, scripts, and structured notes documenting my skill development across core security fundamentals, web security, and offensive security techniques.
 
-> **Focus for 2026:** Linux, Python, web exploitation, TryHackMe → HTB progression, CTF prep, and foundational skills for an IT role in early 2027.
+> **Focus for 2026:** Linux, Python, web exploitation, TryHackMe → HTB progression, CTF prep, and foundational skills for an IT role.
 
 ---
 
