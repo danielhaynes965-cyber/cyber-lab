@@ -1,5 +1,4 @@
 ![Made with Markdown](https://img.shields.io/badge/Docs-Markdown-blue)
-![Focus-2026](https://img.shields.io/badge/Focus-THM→HTB%20%7C%20Linux%20%7C%20Python-brightgreen)
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow)
 
 # Cybersecurity Portfolio
