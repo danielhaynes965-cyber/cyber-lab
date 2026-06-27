@@ -2,11 +2,7 @@
 ![Focus-2026](https://img.shields.io/badge/Focus-THM→HTB%20%7C%20Linux%20%7C%20Python-brightgreen)
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow)
 
-# Cybersecurity Portfolio — Daniel Haynes (aka *Xenithu*)
-
-This repository contains my cybersecurity and pentesting portfolio: hands-on labs, writeups, tools, scripts, and structured notes documenting my skill development across core security fundamentals, web security, and offensive security techniques.
-
-> **Focus for 2026:** Linux, Python, web exploitation, TryHackMe → HTB progression, CTF prep, and foundational skills for an IT role.
+# Cybersecurity Portfolio
 
 ---
 
@@ -18,62 +14,24 @@ This repository contains my cybersecurity and pentesting portfolio: hands-on lab
 /
 ├── tools/
 └── writeups/
-    ├── htb/
-    │   ├── challenges/
-    │   └── machines/
-    └── tryhackme/
-        ├── challenges/
-        ├── cryptography/
-        ├── exploitation/
-        ├── linux/
-        ├── networking/
-        ├── other/
-        ├── tooling/
-        ├── web/
-        └── windows/
+    ├── CTFs/
+    ├── CyLab/
+    ├── HTB/
+    └── TryHackMe/
 
 ```
 
 ---
 
-## How This Repo Works
+## About This Repo
 
-Writeups are organised by platform and concept rather than by course or learning path. This keeps related knowledge grouped together as skills develop across multiple sources.
+Currently, the repo is mainly note-style writeups from TryHackMe labs. I made these to build the habbit of documentation, so as I progress into more advanced challenges, I contribute meaningful writeups and useful tools/scripts to the community.
 
-**writeups/tryhackme/** contains room writeups grouped by concept — linux, windows, networking, cryptography, tooling, etc... The challenges folder contains flag-based rooms that required independent problem solving rather than guided learning.
+**writeups/TryHackMe/** contains room writeups grouped by concept — linux, windows, networking, cryptography, tooling, etc... The challenges folder contains flag-based rooms that required independent problem solving rather than guided learning. These are closer to notes than to writeups.
 
-**writeups/htb/** contains Hack The Box writeups split between machines and challenges. These are only published after the content is no longer active.
+**writeups/HTB/** and **writeups/CyLab/** are coming soon.
 
-**tools/** contains scripts and utilities I've built during labs and practice.
-
----
-
-## Current Skills
-
-- **Systems:** Linux (Kali, Ubuntu), Windows basics, CLI  
-- **Languages:** Python (scripts/automation), Bash  
-- **Security:** Burp Suite basics, OWASP Top 10, recon/enumeration  
-- **Networking:** TCP/IP, DNS, HTTP, OSI model, troubleshooting  
-- **Platforms:** TryHackMe (Cyber 101 → Jr Pentester)
-
-**Growing into:**
-- privilege escalation  
-- Active Directory basics  
-- cloud fundamentals  
-- HTB Tier 1  
-- CTF web challenges
-
----
-
-## 2026 Roadmap
-
-- Set up GitHub portfolio
-- Complete THM Cyber Security 101
-- Finish THM Junior Pentester (mid‑year)
-- Start HTB Starting Point → Tier 0/Tier 1
-- Build 1–2 Python tools
-- Participate in picoCTF + DownUnderCTF
-- Prepare resume + GitHub for Jan 2027 IT job applications
+**tools/** contains scripts and utilities I've built during labs and practice. Quite a humble folder currently, but will evolve with my scripting ability.
 
 ---
 
