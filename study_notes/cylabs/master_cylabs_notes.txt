@@ -1,6 +1,6 @@
 -- MASTER CTF NOTES --
 
-* A collection of skills, commands, tricks, knowledge, etc... accquired when doing CTF challenges
+* A collection of skills, commands, tricks, knowledge, etc... accquired when doing CTF challenges on cylabs in preperation for PECAN+ CTF 2026
 
 
 WEB EXPLOITATION
