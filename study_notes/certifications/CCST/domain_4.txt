@@ -1,0 +1,255 @@
+Domain 4 - Vulnerability Assessment and Risk Management  
+ 
+- Vulnerability Management
+	• An ongoing process within organisations
+		○ Proactively identify vulnerabilities
+		○ Document discovered vulnerabilities
+		○ Make decisions on how to handle vulnerabilities and in what order
+		○ Implement responses to mitigate the most important vulnerabilities
+		○ Monitor how effective deployed responses
+	• Managing vulnerabilities is always more effective and less costly than dealing with the consequences of successful attacks
+			§ First step in vulnerability management is to identify the vulnerabilities that exist in an environment
+			§ First step in vulnerability identification is to collect comprehensive descriptive information about the hardware and software components in an environment 
+- Comprehensive Inventory
+	• Made up of descriptive information for each component (software and hardware)
+			§ Including detailed version information
+			§ Once a comprehensive inventory is compiled, each component can be compared against lists and databases of known vulnerabilities 
+			§ This identifies intersections that indicate the existence of a vulnerability for one or more deployed components
+		○ Existing vulnerabilities for deployed components do not necessarily indicate an imminent attack
+			§ For a vulnerability to be exploited, there must be an external threat that is realized against that specific vulnerability
+			§ The main purpose of vulnerability management is to reduce the attack surface of an organisation
+				□ This is done by mitigating as many vulnerabilities as possible within budgetary constraints
+				□ Since organisations operate with limited budgets, it is best to approach the implementation of vulnerability mitigations by qualitatively and/or quantitively assessing the relative impact of each discovered vulnerability
+					® Apply the available budget to the most damaging vulnerabilities 
+		○ Once an organisation decides which vulnerabilities will be mitigated, the goal is to reduce opportunity for attackers to exploit a vulnerability and carry out an attack successful
+		○ Mitigating a vulnerability does not always mean removing that vulnerability
+			§ It means that it is made less dangerous to the organisation 
+		○ The last step in vulnerability management is to assess each mitigation
+			§ This is to ensure that the exposure to each vulnerability is less than it was before deploying mitigations
+			§ If the mitigations are doing their job, then the attack surface for your organisation should be smaller than before the mitigation was deployed
+		○ At this point the process begins to repeat itself and continually results in finding new vulnerabilities and new ways to mitigate them
+- Reconnaissance – Used to gather information about a target environment
+		○ Knowing active and passive reconnaissance helps prepare an organisation to build a solid defence against cyberattacks
+			§ Attackers use reconnaissance to find the weakest components in an environment
+				Cyber professionals use it to find vulnerabilities before the attacker can
+	• Passive Reconnaissance – Collecting information about a target environment without directly interacting with it
+		○ Information can be collected with stealth
+			§ Target environment is not alerted
+		○ Internet search engines and social media can be great source of information about any organisation or person
+		○ Collecting target information about demographics or other descriptive information does not take much time
+		○ Using an internet search engine to gather detailed information about any entity is called Google hacking
+			§ Google hacking involves using specific syntax and constructing Google or other search engine queries to return information about online entities
+			§ Social media accounts for either an organisation or its personal can return valuable information
+		○ Job postings can be repositories of valuable environmental information
+			§ For example, if an organisation was advertising an opening for an Apache web server security specialist it stands to reason that they use the Apache web server
+				□ Job applicant requirements often divulge important information
+		○ Other online resources for passive reconnaissance include sites that publish leaked passwords and strategic search engines such as Shodan and Censys 
+			§ Wayback Machine [https://archive.org]
+				□ Stores archived versions of websites, some of which go back over 20 years
+		○ Looking at old versions of a website can reveal a lot of information about said website
+	• Active Reconnaissance - Collecting information about by interacting with the environment and analysing the responses
+		○ Goal is to communicate with the target environment to see what resources exist and what they do
+		○ Nmap (network mapper) – Common tool used for active reconnaissance
+			§ CLI utility
+			§ Find what ports are open
+			§ Can scan a network to find out what nodes are active
+			§ Can be used to guess what operating system is being used for each node
+				□ Initial Nmap scan likely just returns active nodes and helps develop the high-level view of a network’s architecture
+					® Enumeration – The process of using active reconnaissance to map a network
+		○ Other utilities that assist in collecting information about a networked environment by sending traffic to nodes in the network and analysing the results:
+			§ Whois
+			§ Netcat
+			§ Wireshark
+		○ Active reconnaissance is generally more accurate than passive reconnaissance, however it risks the person carrying out the reconnaissance being discovered
+			§ Most active reconnaissance utilities generate traffic that security devices can detect and potentially classify as malicious activity
+			§ If stealth is important, then don’t use active techniques 
+	• Testing – An extension of the active reconnaissance phase
+		○ AKA port scanning
+		○ Uses the same tools as those used in initial active reconnaissance
+			§ The difference is in the intensity of the scan and the quantity of traffic sent to each node
+				□ ICMP packet may be enough to determine if the node is active, but if any more information is desired then more packets will be sent to the same node
+		○ Testing through port scanning is an effective way to gain information about your environment that attackers may try to use against you
+		○ Nmap – A favourite tool used in port scanning
+			§ There are also other tools similar to Nmap that work similarly or are more user friendly
+		○ Packets that provide aggressive port scanning and environment analysis:
+			§ Nessus
+			§ OpenVAS
+		○ Main goal of the testing phase is to find information about the operating systems or services a target environment’s nodes are running
+			§ When a cyber profession knows what services are active on what nodes, finding the vulnerabilities becomes possible
+		○ Port scanning is an iterative process
+			§ The common approach is to start with high-level scans and use the information from those scan layers to create more detailed scans.
+				□ First scan may include operating systems
+				□ Next scan can use the results of the first scan to search for common ports that may be open on the detected operating system
+			§ This approach requires many more scans and lots of repetitive activity
+- Automation 
+	• Can increase consistency, reduce errors, and help simplify multiple layers of scans
+		○ Can be as simple as writing scripts that call CLIs
+		○ Could use more comprehensive scanners to automate activities
+			§ Such as Nessus and OpenVAS
+		○ It is recommended to automate scans to reduce the workload
+- Vulnerability Repositories
+	• An important part of vulnerability management is determining what vulnerabilities exist in the scope of an IT environment
+		○ Standard approach is to compare hardware and software to a database/list of vulnerabilities
+		○ These repositories can be lists or databases, and can be publicly available, or subscription only
+		○ Repositories can save time when finding vulnerabilities
+			§ Only useful if the content is still current (not dated)
+				□ New vulnerabilities are found daily, so out-of-date repositories could be missing a crucial vulnerability that an attacker could use to compromise your environment
+- Vulnerability Assessment Tools
+	• Publicly available vulnerability repositories ease the burden of finding vulnerabilities in an environment
+	• Using industry standard tools for vulnerability identification reduces time and increases work quality
+	• Finding more vulnerabilities along with severity information assists assessors in determining which vulnerabilities warrant the strongest response
+	• Using standard tools increases the effectiveness of making recommendations and crafting polices that are aligned with industry wide best practices
+		○ Tools that correlate their findings with publicly available online vulnerability repositories and produce standard output and reports that are easy to understand and use in decision-making:
+			§ Nessus
+			§ OpenVAS
+			§ MBSA
+- Vulnerability News
+	• An advantage of a world that is hyper connected is that it is easy to find information about any subject
+		○ There are many online resources available that provide threat intelligence information
+		○ Learning from/drawing on current threat intelligence is a perquisite for an effective vulnerability management program
+			§ A commonly referenced vulnerability repository is the CVE list
+			§ CVE is maintained by the MITRE Corporation and is a good first go-to when examining or researching vulnerabilities  [https://cve.mitre.org]
+- Ad-Hoc - The process of researching suspicious activity to determine if it is the result of a potential attack or the preparation for an attack
+		○ Threat intelligence operates on at least 2 levels
+		○ It is important to stay abreast of the current state of ongoing cybersecurity threats
+	• Ongoing threat intelligence preparedness - The process of frequently visiting sites and resources that contain updates, news, and summaries of ongoing cybersecurity topics
+- Automation
+	• Automating threat intelligence activities is necessary to keep up with the fast-changing security landscape
+	• The can include:
+		○ Scripting frequent vulnerability scans
+		○ Utilizing vulnerability assessment suites and their automation features
+		○ Integrating scheduled scans with updated vulnerability databases and security feeds
+	• Many information feeds provide APIs allowing sophisticated scripts to investigate vulnerability results automatically
+		○ To help stay current with emerging threats
+- Documentation
+	• Enumeration Phase - The first step in crafting a penetration test, planning a cybersecurity attack, or carrying out a comprehensive vulnerability assessment
+		○ Enumeration is developing the architectural detail plan for your target environment
+		○ Enumeration is important in the vulnerability management process because the entire purpose of the process is to discover what vulnerabilities are known to affect the hardware and software components of your network
+			§ If hardware/software asset list is incorrect or out of data, potentially harmful or malicious vulnerabilities in the IT environment will be missed.
+	• Ensure that all documentation pertaining to you IT environment is accurate and up to date
+		○ Asset lists network maps, policies, procedures and any other documentation should be periodically reviewed and updated to reflect the current state of that environment
+		○ Documentation should be reviewed whenever a security incident occurs
+			§ As well as after the incident has been resolved
+			§ Address any gaps and document any changes that were made 
+	• Keeping documentation up-to-date may not be easy or glamorous, but it makes IT environments much more secure
+		○ Will also shorten the time required to respond to incidents
+- Risk Management 
+	• Risk management and vulnerability management are related, but are different activities.
+		○ A vulnerability is any weakness in an environment that could allow an attack to carry out an attack successfully
+		○ To carry out an attack, an attacker must realise an exploit against a vulnerability
+		○ A risk is the likelihood that some action may occur that affects the organisation, along with the magnitude of the impact on that organisation 
+			§ Refers to an adverse event
+		○ Primary goal is to create a list of known risks sorted by likelihood and effect on the organisation
+	• Realised Risk - Any action that exploits a vulnerability successfully 
+		○ Always affects the organisation, and the ones that are the most likely to occur and have the highest negative impact are the ones that should be addressed first
+			§ One approach to mitigating risk is to mitigate the vulnerability allowing the risk to be realised
+			§ This is why vulnerability management and risk management are related processes
+- There are two primary approaches to assessing and managing risk:
+		○ It is important for professionals to understand both of these approaches when building an effective risk response plan
+	• Qualitative - Assigns a subjective level of risk based on an individual risk's likelihood of occurrence and effect on the organisation
+		○ Good for comparing different risks, but not for representing monetary impact
+			§ Common mediums include:
+				□ Low risk
+				□ Medium risk
+				□ High risk
+				□ Extreme risk
+			§ A recurring risk that is likely to cost a company thousands of dollars annually would most likely be placed in high or extreme high risk
+			§ On the other hand, a vulnerability that is only expected to be realised once every 10 or 15 years and only costed a few hundred dollars would be classified in low risk.
+	• Quantitative - Assigns numbers that are easy to calculate and use in formulas to determine expected loss
+				□ Makes it easy to rank risk by the expected loss each year
+			§ Each risk is assigned a probability of occurrence and a dollar value for the loss should the risk be realised
+		○ The dollar value of the realised risk loss is easy to calculate by multiplying the occurrence probability by the loss expectancy 
+		○ Works very well when numbers are available and can be largely automated
+			§ Occurrence probabilities and expected loss numbers are only estimates 
+		○ Personnel who work most closely with the resources at risk may provide more valuable input to the risk assessment process
+	• It is recommended to use both qualitative and quantitative risk assessment and compare the results
+		○ The best result of each analysis type would be a list with the same risks ranked in the same manner
+	• In practice, the lists are likely to be slightly different and require management to decide how to allocate limited budgets for risk mitigation
+- Mitigation
+	• For each risk that has been identified, there are generally four different mitigation options
+			§ Organisations can pick and choose between the four, depending on how it applies to the risk
+			§ A key aspect of risk management is to understand the risks that pose the most danger to an organisation and which mitigation strategy provides the most economical protection against each risk
+		○ Avoidance - Risks should be completely avoided if possible without excessive cost
+			§ An example would be disabling or removing unneeded services
+				□ If a database server has an old and insecure web server active, the unused web service may be vulnerable to attack
+				□ Disabling or completely uninstalling the webservice removes the vulnerability and any associated risk
+		○ Acceptance - If the risk is realised and causes very little negative impact on the organisation, then the best strategy may be to accept it
+			§ If it is more costly to try to mitigate the risk with some other technique then the loss that is expected, it may be best to accept it
+		○ Control - May be best for any risks that cannot be accepted or avoided
+			§ Controlling a risk means deploying security controls that reduce the probability that a risk will be exploited by successfully realised threat
+				□ Adding a firewall, IDS, IPS, or implementing MFA are examples of deploying security controls as a mitigation strategies.
+		○ Transfer - The result of an agreement that, should a risk be realised, the loss would be covered by another party
+			§ A very common example is insurance
+- Data Classifications
+	• While some risks are global across any organisation, other risks target specific data
+		○ Not all data that information systems store or process should be protected from disclosure
+			§ Only data that is marked as sensitive should be protected
+	• Understanding how data classification affects security control needs is important to building effective security
+	• Common classes of protected data types include:
+			§ Standard regulations such as HIPPA, GDPR and PCI DSS determine how data such as this should be handled
+		○ Personally Identifiable Information (PII)
+		○ Personal Health Information (PHI)(has priority over PII)
+	• Special classifications of certain types of data come with additional risk
+		○ Organisations that are subject of GDPR disclosing consumers' PII may result in the risk of a fine or loss privileges
+		○ GDPR doesn't place the same level of restrictions on non-personal data
+			§ Data classification should play a role in overall risk management
+- Security Assessments
+	• Comprehensive security assessments of IT systems should span all hardware and software components within an IT infrastructure
+	• Each device's role should inform the level of assessment to ensure the utmost security of that component to yield the most effective security plan 
+	• Servers or devices that hold sensitive information should demand higher levels of security
+		○ However, devices that don't have sensitive information, but could provide access to devices that do should definitely be considered in the assessment process
+	• Security is not a state, but rather a process
+		○ An organisation may take a security snapshot at a point in time, but any changes to the environment will likely change the overall security posture
+		○ A rigorous change management process must be followed to ensure the organisation can keep track of how the infrastructure's state changes over time
+			§ Operations on a day to day basis both change the state of an infrastructure and gather valuable information on its operation
+		○ Collecting input from operations should be part of the security assessment process
+			§ End users and helpdesk personnel can often provide valuable input on how well or poorly an infrastructure is operating 
+	• Information assurance continually reviews the input provided by all sources to ensure compliance with the policy
+	• When all the pieces work together, environments are cohesive, usable, and secure
+- Disaster - An event that results in any damage to an organisation
+		○ Events come in 2 primary forms (natural and human caused)
+		○ Organisations must have plans in place so they are prepared for all types of disasters
+		○ Could cause long term or short term event effects
+	• Natural disasters
+		○ Flood
+		○ (natural) Fire
+		○ Tornado
+		○ Earthquake
+		○ Electrical Storm
+	• Human caused events - Any human action that causes major disruption to an organisation
+		○ Cyberattacks
+		○ Strikes
+		○ War
+		○ Terrorism
+	• In the event of a disaster, the main goal is to first protect the human personnel, then restore operations as quickly and efficiently as possible
+		○ Recovery may require different things such as location change depending on the disaster
+	• Disaster Recovery Plan (DRP) - Addresses severe damage to the infrastructure that supports operations 
+		○ Activated whenever an event has caused so much damage that the infrastructure that supports operations can no longer function
+			§ Can be due to:
+				□ Fires
+				□ Earthquakes
+				□ Floods
+		○ Specifies the steps required to take to restore the infrastructure that operations need
+		○ Once the DRP has satisfied its goals, the BCP can continue to work on restoring operations
+	• Business Continuity Plan (BCP) - Addresses the short term interruptions
+		○ A plan that is activated when one or more CBFs are interrupted
+			§ Interruption could be a power outage or a lack of workers
+		○ BCPs Often provides additional suggestions to allow CBFs to continue working with minimal interruption
+		○ Business Impact Analysis (BIA) - A formal assessment of business processes that are critical to supporting normal operations
+			§ A comprehensive BIA defines all CBFs (critical business functions) that must be protected to conduct operations
+	• DCPs and BCPs work together to ensure that businesses endure the minimum amount of down time possible when experiencing an interruption or disaster
+- Backups - A secondary copy of stored data to be used if the primary copy becomes damaged or otherwise unusable
+		○ One of the most common components of a BCP and DRP that allows operations to continue
+	• Organisations that do not create backups risk losing critical data in the event of a disaster, which may result in monetary loss
+	• Historically, organisations would create periodic backups to removable tape devices
+		○ Today, backups may use tapes but may also utilise removable disks, optical discs, networked storage, or even virtualised images
+	• Since backups should be separated from primary copies, removable media or network storage is often desirable
+		○ Geographically-separated backups decrease the possibility that a catastrophic event will impact both the primary and secondary copies of data
+			§ Off-site backups and alternate processing sites are common to help organisations be resilient in the face of localised disasters
+	• One of the most common flaws in a backup strategy is the lack of a clear procedure for restoring backup data when needed
+		○ Restoring a backup image is not always as easy as organisations may expect
+			§ The process involves acquiring the correct backup image, determining what parts need to be restored, and initiating the restore process.
+	• Without proper planning, an organisation may find itself in a situation where restoring a complete backup takes many more hours than expected
+		○ To avoid any surprised after a catastrophic incident, organisations must develop comprehensive restoration plans and test them
+		○ Untested recovery plans are essentially useless
+- Disasters that interrupt activities of an organisation is an attack on availability

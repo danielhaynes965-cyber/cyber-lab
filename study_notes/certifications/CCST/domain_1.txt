@@ -1,0 +1,318 @@
+Domain 1 - Essential Security Principles
+
+- Key Terms - The Cybersecurity vocabulary 
+		§ Asset - Something that accesses a system such as a phone, computer, building or even just data
+		§ Object - An asset or resource
+		§ Subjects - Consumers (people)
+	○ Vulnerability - A weakness in a system that is specifically related to one (or more) assets
+		§ Vulnerabilities can be found in the hardware, software, in the process of how something is implemented, or in procedures
+		§ A vulnerability is necessary for an attack to succeed.
+		§ An important part of planning an attack is finding a vulnerability in the victim's environment.
+	○ Threat - Any action that has the potential to harm an asset
+		§ A threat without a vulnerability is virtually meaningless
+	○ Exploit - Planned attacks that are designed to realise threats against vulnerabilities.
+		§ Exploits are the steps that an attacker would take to carry out an attack on a vulnerability.
+	○ Risk - How likely it is for a threat to be realised against a vulnerability.
+			□ Companies try their best to reduce the risk to protect their assets.
+		§ An example of a risk equation is: Risk = Asset x Threat
+			eg: $12 * 5% = $0.6 $
+		§ Can be expressed in qualitative or quantitative data.
+			□ Qualitatively - low, medium, or high (as a quality)
+				® Useful when expressing the potential for monetary loss
+			□ Quantitatively - 12%, 35%, 79% (as a specific percentage/quantity) 
+				® Used for ranking which risk is the most important
+- Attack Vectors - The path that an attack will take to exploit a specific vulnerability
+	○ (An exploit is the method an attack uses, and attack vector is the path said attack takes)
+- Security Controls - A countermeasure designed to reduce risk. Designed to detect, avoid, prevent or minimise damage to a protected assets.
+		§ Security controls take effort from people to select, deploy, configure and maintain
+		§ Professionals must select the most effective security controls
+		§ It is unwise to only rely on one security control for each asset. Multiple layers of controls will always provide much better protection and reduce risk.
+	○ Security controls can be deployed in different forms including:
+		§ Passwords
+		§ Locks
+		§ Firewalls 
+	○ Hardening - The ongoing process that involves assessing a system and it's surrounding environment for vulnerabilities, and then deploying the best security controls to address and reduce the risk for each vulnerability
+		§ The defense in depth strategy - Requires that all resources are protected by multiple security controls that are all located separately
+			□ One of the best existing strategies to harden an environment. 
+			□ Is designed to make it incredibly difficult to reach each individual target asset due to many layers of different controlls protecting each other and the assets. 
+		§ A common approach to hardening a system is to disable un-needed services.
+				® Windows + R brings up the run window
+				® Then type "services.msc"
+				® This will bring up the services window which allows you to controll which services you would like to run
+			□ This is because every services that is running is a potential attack point from which the attackers could exploit the rest of the system.
+- CIA Triad - The three essential pillars/tenets that must be present in a secure environment. 
+			§ The most secure systems have multiple security controls that work protect all three of the foundation pillars of the CIA Triad.
+		○ In modern systems there have been more values added, but the CIA Triad will always be known as core requirements
+		○ The three properties describe how an object will be protected from unauthorized subjects.
+		○ Building and maintaining a secure environment starts with the CIA Triad
+	• Confidentiality - The assurance that no unauthorized subject can access a protected object.
+		(confidentiality focuses on the object, privacy focuses on the subject)
+		○ Security controlls that enforce confidentiality include:
+			§ Access controls
+			§ Encryption
+		○ Enforcing confidentiality - subjects must have sufficient license to view/access an object.
+	• Integrity - Assuring that unauthorised subjects do not modify the protected resources 
+		○ Simmilar to confidentiality, but focuses on editing the object, not just accessing it
+		○ Integrity assures that all changes to a object come from an authorised subject.
+			§ Unauthorised changes are not allowed in a system that protects integrity 
+	• Availability - The assurance that an authorised subject can access any protected resource on demand without delay.
+			§ Ransomware attack - A type of cyber attack that encrypts sensitive data, making it unavailable.
+		○ It is pointless if an object is incredibly well protected if said object is also inaccessible 
+		○ There are many security controls that focus on supporting the availability of a subject, and minimizing the single points of failure.
+		○ Availability strategies include:
+			§ Replication
+			§ Duplication
+			§ Detection Layers
+- Attackers - A person that is responsible for performing a cyber attack. They can be sorted  into different categories based of things such as motivation or methods.⬚("Type equation here." )
+		○ Understanding the enemy is an important part of building a defense
+	• Script Kiddies - Attack for fun
+		○ The easiest type of attacker to deal with
+			§ Simple countermeasures can often be enough to deal with them
+		○ Lack mature hacking skills
+		○ Do little more then run exploits/scripts made by others
+		○ More numerous then other type of attackers
+			§ Their large numbers is where they become a nuisance
+		○ Hack because of the enjoyment or for minor amounts of fame amongst other hackers
+	• Hacktivists - Hack for a cause
+		○ Cyberattackers
+		○ Have been called  "hackers that are also activists"
+		○ Hacktivists have been around throughout history
+		○ They hack so to bring attention to causes in an effort to realise action
+			§ Motivated by the commitment to their ideology
+				□ Willing to use cyberactivity to reach their goals
+		○ Traditional activists use protests to disrupt the normal operation of agencies
+			§ Hacktivists to the same thing, however in the cyberspace
+		○ Many hacktivist activities are based around disruption and/or defacement
+		○ Hacktivists rarely work alone
+		○ They often are financially backed by organisations that back them
+	• Cybercriminals - Hack as a profession
+		○ Any criminal that deals with computing in their crime
+		○ They act for their own benefit
+		○ As with most successful criminal organisations, the earnings from illegal operations go to fund more operations in the future. 
+			§ Results in a sophisticated criminal organisation
+		○ The motivation of cybercriminals is monetary gains
+			§ The end goal of all activity is profit
+	• State Actors - Supports governments
+		○ Some of the most dangerous attackers
+		○ Nation states have learnt that cyberattacks are an efficient way of benefiting on a national level
+			§ This is known as cyberwarfare
+				□ State actors are the hackers that nations employ to carry out cyberwarfare activities
+		○ State actors are often the best funded, trained and supported cyberattackers, making them incredibly dangerous.
+		○ Often well organised
+		○ Have specific goals/targets
+		○ State actors work in allegiance to their sponsoring state
+			Motivation includes:
+			§ Monetary compensation
+			§ Patriotic duty
+	• Insiders - Use their knowledge to focus attacks
+		○ Can come from an upset employee or someone that has internal access that plans on using it for malicious activity
+		○ Regardless of origin, insider threats have elevated privileges and internal knowledge that can make their attacks much more effective and harder to counter.
+		○ Motivation can vary but includes:
+			§ Money
+			§ Revenge
+		○ A Dos attack is an effective way of costing companies that rely on online activity lots of money.
+		○ Insiders are capable of doing lots of damage with their knowledge.
+	• Advance Persistent Threats (APTs)
+		○  Can be any type of more sophisticated attacker that establishes a presence in the victims environment to expand the scope of the attack
+		○ The APT must posses the advanced skills to successfully compromise an environment and remain undetected
+		○ More commonly nation state actors since this type of threat requires sophistication and some kind of funding.
+			§ Nation states can provide this kind of funding and training, but not many other organisations can.
+		○ APTs are known for being one of the most dangerous types of attackers since they stretch their attacks over time.
+- Code of Ethics - A code of ethics is a statement of aspirations and limitations that outlines how a group of people must conduct themselves.
+	• Is designed to standardize the behavior of individuals 
+		○ Most cyber security certifications will require those who are participating in them to agree to a code of ethics before being allowed to sit the exam.
+			§ This is to clarify what is acceptable are desired behavior, and to document what types off behaviors are not acceptable.
+	• Cybersecurity professionals must learn the attacker's tools/tactics
+		○ Without a moral compass, these people could use what they learn to do great harm for their personal gain
+- Malware - Software that performs actions that are not what the user intends (malicious software)
+	• Types of malware:
+		○ Viruses - Spread to other files to do damage
+		○ Worms - Self contained programs that spread on their own
+		○ Trojan Horses - Malicious programs that mask as useful programs.
+	• Spyware - A type of malware that isn't really malicious, since it only collects data and sends it to a data collector
+		○ Used to collect data before an attack
+	• Ransomware - Infects a computer, and then encrypts valuable files. The attacker will then ask for a ransom to release the file, often in crypto
+		○ A good response is to have multiple security controls and separately stored backups
+			§ Preventative Controls - Reduce the risk of the attack
+			§ Detective Controls - Deployed to identify the attack as early as possible and notify security personal
+			§ Corrective Controls - Designed to revive files that have been encrypted from backups which should be saved separately.
+- Denial of Service attack (Dos) - Works by overloading a server with too much traffic, so that authorised users cannot access the server. Is an attack on availability
+		○ DDos attack - A traditional Dos attack where attackers will flood the server with traffic from many different devices, making it harder for the victims to defend due to a large number of attack sources.
+			§ Attack will have an attack coordinator that corrupts separate computers.
+				□ Bot - The computers that get controlled by the attacker
+				□ Botnet - The term to describe the group of bots
+	• A good defense is to block traffic
+	• Includes ransomware
+- Social Engineering Attack - Tricks an authorised subject into doing what the attacker wants
+	• Technical controls alone cannot stop these attacks, since the attack is on the user.
+	• Focuses on the human
+		○ Designed to trick good people into helping others
+	• The most 'fun' of all attacks
+	• Can be a short term attack, or a long term attack
+	• Tailgating - When the attacker uses the victim to access something that only authorised users are allowed to access
+		○ Attackers must trick the victim.
+	• Phishing - Where an attacker messages the victim and requests money or information, often by using a sad situation to try to trick the victim.
+		○ Relies on urgency 
+			§ How to detect a phishing attempt
+				□ Grammatical errors
+				□ Low resolution logos
+				□ Odd URLs
+				□ Lack of personal greeting
+					® Sometimes they are targeted
+		○ Spear phishing attacks - A type of phishing attack where it is targeted and more specific.
+		○ Vishing - Phishing that is done though a voice communication
+		○ Smishing - Phishing that is done though SMS messages
+		○ Blagging - An ongoing scenario based phishing attack
+		○ Other types of phishing attacks involve attackers trying to trick victims to click on links to 'save their personal data'
+	• Phreaking - An old attack that used devices to generate specific tones which trick phone boxes into providing telecommunications for free.
+		○ Frequency -> Phreak
+- Physical Attacks - Cyberattacks that involve something that is physical, ie you can touch
+	• Can range from stealing a laptop to crafting a specific fingerprint code.
+	• All data is stored somewhere physically
+	• Data that is secured online must also be secured physically for it to be secure.
+		○ Without physical security, all other data security is meaningless
+	• Physical Controls - Controls that are designed to protect against physical threat including:
+		○ Fire
+		○ Floods
+		○ Earthquakes
+		○ Crime
+	• A secure environment must include controls that defend physical attacks
+- Person Based Threats and IoT
+	• Compromising identities, whether they be a devices' or a subject's is now the primary focus.
+		○ This is because today's cyber infrastructure is oriented around identity  
+	• Understanding the different types of attacks that focus on identity helps cyber security professionals to defend against the attack.
+		○ Man-in-the-middle attack - Target the initiation of communication sessions when setting up a transition.
+			§ Involves an attacker intercepting messages between two people, and pretending to one that they are the other, while really they are inspecting and modifying their messages.
+			§ The attacker then gets to see all the messages, even though the connection was thought to be secure
+	• Internet of Things IoT - Low cost, easy to use devices
+		○ For example:
+			§ Smart Refrigerators
+			§ Doorbells
+			§ Cameras
+		○ Often connected to a organisational or home-owner networks
+		○ IoTs are often sold as "easy to use" which therefore mean insecure
+			§ Devices have not been hardened.
+			§ Vulnerable to insiders
+- Remote Authentication Dial-In User Service (RADIUS) - Centralized standard for establishing trust for remote users, or subjects, for information systems.
+	• Although it is now dated, RADIUS is still in use as a centralised service to authenticate and authorise remote users for many current systems
+- Authentication, Authorization, Accounting (AAA) - The foundation for determining if a subject is authorized or unauthorized.
+		○ It is a crucial part of security
+		○ All 3 processes are different, yet each serve an important part of building trust in an identity
+			§ Any subject can claim to be authorized against a computer system.
+				□ The only way a system can trust this identity is to:
+					® Authenticate an identity claim
+					® Determine what authority the identity should have
+					® Validate that the process works properly
+	• Authentication - The authentication process is when a subject is proven to be the identity they are claiming to be.
+			§ Challenging the subject to provide information or characteristics that only the authentic identity would possess
+			§ A common authentication technique is the password
+				□ Widely known but not very effective and is beginning to be outdated with better authentication techniques
+		○ Multi Factor Authentication - Subjects must provide a combination of type 1, 2 and 3 authentication to authenticate their identity
+				□ Is the current best balance between security and utility when authenticating remote subjects.
+				□ Makes unauthorized access much more difficult then only using a password
+				□ Not only for cyberspace
+			§ MFA - When more then 2 types of authentication are used
+				□ Is also sometimes used to describe 2FA
+			§ 2FA - When two types of authentication are used
+		○ Authentication Credentials -  Evidence that only the authorized subject possess is usually required.
+			§ Type 1: What you know
+				□ Requires the subject to memorise or remember specific information.
+				□ Most common type of authentication
+				□ Passwords - The most common type of authentication used globally
+					® Password Policies - Organisations implement requirements on one's password such as complexity, lifespan, reuse restrictions and recovery procedures so to increase the security.
+						◊ Password Complexity - Includes requirements on password length, allowed characters, and essential characters (eg: Aa, 01, !@)
+							} Password complexity policies make it harder for attackers to guess, but can also frustrate users
+								– Users can often end up writing down complex passwords in easy access areas, which also make it much easier for attackers.
+						◊ Password Lifespan - Restrictions on how long passwords can be used before they are required to be replaced.
+						◊ Self Service Password Reset - Allows users to reset their password, but requires other forms of authentication to validate their identity claim.
+			§ Type 2: What you have
+				□ Possessing a token or other device that generates a code or number that the server will recognise.
+				□ This could include an old fashion token, or an app on a phone
+			§ Type 3: What you are/do
+				□ aka biometrics
+					® Includes fingerprints, retinal scans and handwriting tests.
+				□ The idea is that certain characteristics of a subject are so unique that an unauthorized user would not be able to replicate it.
+				□ High cost and lack of consistency has hindered the acceptance of type three authentication
+	• Authorization - Determining what authority the identity should have
+		○ Associate rights and privileges with identities
+	• Accounting - Where actions are reviewed to ensure the authentic user is doing what they are authorized to do.
+		○ Failed log in attempt ID: 4625
+- Encryption - A cryptographic that scrambles data so only authorized users can unscramble it
+			§ Only an effective control when the selected algorithm and key size provide the level of protection that is required for specific applications
+			§ The strength of an encryption algorithm is measured by how long it takes to comprimised
+				□ Stronger algorithm would take longer then a weaker one
+			§ The general time it takes to compromise an encryption algorithm is based on the state of technology and available resources at the time of the attack
+			
+			§ Newer algorithms that have more powerful machines and longer encryption key lengths are harder to and take longer to attack
+			§ Always consider how long your data must be secure for when choosing an encryption algorithm
+			§ DES - Data Encryption Standard
+				□ Used by US government from 1973 to 1999 where it was comprimised and could now be comprimised in 20 minutes
+				□ Symmetric Encryption
+			§ AES - Advanced Encryption Standard
+				□ A symmetric block sipher algorithm with a block size of up to 256 bits
+				□ aka Rijndael algorithm
+		○ Plaintext - The original, unencrypted data
+		○ Encryption Key - A special value used to scramble data
+		○ Ciphertext - Unreadable; can be safely stored or transmitted even through insecure channels
+		○ Decryption Key - Allows a subject to transform ciphertext into plain text by executing the correct decryption algorithm using the correct decryption key.
+	• Symmetric Encryption - AKA private key encryption
+			§ Commonly used to encrypt disk drives
+			§ Works well for stored data, but not as well for transmitting data across a network
+				□ This is because the key must also be transmitted, which risks it being divulged at therefore compromised 
+		○ Uses the same key to encrypt and decrypt data
+		○ General much faster then public key encryption
+		○ Encryptor and decryptor must both possess the same key
+		○ Providing that they key is not divulged, symmetric encryption is both fast and secure
+	• Asymmetric Encryption - AKA public key encryption
+			i. Both encryptor and decryptor must have a public key and a private key
+			ii. They must keep the confidentiality of their private keys secure, but it does not matter with the public key.
+			iii. They can send each other's public key's over insecure networks, but the information is worthless without the corresponding private key.
+		○ Slower then private key encryption, however there is no key distribution issue
+		○ Uses a pair of simmilar, but different keys to encrypt and decrypt data
+			§ One key encrypts data into ciphertext
+			§ A different key decrypts the data back into plaintext
+		○ Nonrepudiation - Guaranteeing the authenticity of the sender by encrypting the data with a private key, so that anyone who has access to the corresponding public key can decrypt it (making it's confidentiality essentially worthless). This guarantees that the sender encrypted the data, proving the sender's authentication.
+			§ The sender can't deny sending the message
+	• Hashing - An easy-to-calculate, one way function that is extremely difficult to reverse
+		○ A unique feature in hashing is that a small change in the input will result in a very large change in the result
+		○ Hashing is well suited for protecting/detecting data integrity
+			i. A user will send a file and a hash code to the recipient
+			ii. The recipient can use the hash algorithm on file name, and the if the code is the same as the one that is received then the file has not been edited.
+			iii. If the code is different then the file's integrity has been comprimised 
+- Public Key Cryptography - Making sure public keys are easily available.
+	• Certificate - A data structure that includes a trusted identity
+			§ Certificate Authority (CA) - The trusted identity for a certificate
+				□ As long as a subject trusts a CA, they should also trust any certificates that the CA issues
+		○ The public key has been validated by a trusted entity
+		○ An authenticated identify for an identity
+		○ Certificates are designed to enforce the trust in others' public keys
+		○ The public key (as well as descriptive information) of an identity that has been validated by a certificate has been digitally signed by CA
+			§ Includes expiration data of certificate
+		○ Certificate allow the sharing of public keys and the trust of said keys
+	• Digital Signature - Nonrepudiation 
+		○ Simmilar to public key encryption
+		○ Singing algorithm encrypts the message with the private key of the sender
+		○ Recipient can validate the sender with the public key of the sender
+		○ Digital signatures validate the authenticity of a message and that it came from a stated sender
+	• Public Key Infrastructure (PKI)
+		○ Enables senders and recipients to exchange public keys and trust certificates
+		○ Includes CAs, authorised users and a database of their public keys
+			§ These are easily distributed to authorized recipients
+		○ Makes it easy to find the public key of the sender, verify said sender, and then decrypt the data
+			§ Enforces CIA
+- Data - Information that has been translated into a form that is efficient for movement or processing
+	• Stages of Data:
+		○ Data at rest - Data that is stored on storage media
+				□ Storage media includes USB drives, hard drives, SSD drives
+			§ Symmetric encryptions are used for data at rest
+			§ Is encrypted to restrict the access of unauthorised user
+		○ Data in transit - Data that is being transmitted from one storage to another, or to be used in a different location
+			§ Transmitted over a network
+			§ Transport Layer Security (TLS) - The protocol used to secure HTTP traffic
+				□ Asymmetric encryption is more commonly used for data in transit applications due to the difficulty of sharing keys in distributed network systems.
+				□ Application designer combine the best of both symmetric and asymmetric encryption by setting up secure channels, sharing symmetric keys securely and then using those keys for faster encryption
+		○ Data in use - Data that resides in memory in a computer or other device
+			§ Sensitive data may sometimes need to remain encrypted until it is needed in plaintext
+			§ Most common type of encryption for data in use is symmetric encryption due to its speed
+- Protocols - Common rules that devices have to follow so that they can interact with each other
+wn

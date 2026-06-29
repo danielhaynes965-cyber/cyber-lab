@@ -1,0 +1,221 @@
+
+Domain 2 - Basic Network Security Concepts
+
+- Protocol Vulnerabilities
+	• Network Protocols - Sets of rules that nodes use to exchange messages across a network
+			§ A protocol defines each message's format and content
+			§ For any two nodes to connect over a network, they must agree to use the same protocol
+			§ Node - Computer or device connected to a network
+				□ One of the central themes in networking is properly identifying nodes and the services they support
+			§ Local Area Network (LAN)
+			§ Many protocols have been around for a long time, and were designed long before security was an issue
+				□ These protocols, while being functional, often need helper protocols to add security
+				□ The lack of encryption is not the only flaw in these protocol
+		- TCP, UDP, and HTTP - Can be read by any anyone who has access to a node on the network
+			○ Transmission Control Protocol (TCP)
+				□ Provides the transport mechanism for most network communication across LANs  and the internet
+				□ Since TCP is a connection oriented protocol, before two nodes can exchange TCP data, they must negotiate a session (aka TCP Handshake)
+					1. Initiator sends a message with the SYN flag in the header requesting connection from the receiver
+					2. Receiver will respond with a TCP message using the ACK flag to acknowledge the initiator
+					3. The initiator will then acknowledge the response and the session is created
+				Three Way Handshake
+					1. Attackers will send a receiver many messages with the SYN flag, but not respond to any of them. This tricks the node into thinking there are many initiators, and fills up their connections table with half open connections, and become unavailable since they can not accept any new connections
+			○ User Datagram Protocol (UDP)
+				□ Provides the transport mechanism for most network communication across LANs and the internet
+				□ Does not have the vulnerability of the three way handshake since it does not rely on connections
+				□ Used to send packets to all nodes in a network, aka broadcasting a message
+				□ UDP messages can also be used for Dos attacks
+			○ Hypertext Transfer Protocol (HTTP)
+				□ Most common protocol for web browsers and servers to communicate
+				□ Operates at a different layer than TCP or UDP
+				□ Frequent target for attackers
+		- ARP, ICMP, DHCP, and DNS
+				□ Networks need more then core protocols to operate
+				□ Cybersecurity professionals should have a good knowledge of common networking protocols and their vulnerabilities so to be able to defend them
+			○ Address Resolution Protocol (ARP)
+				□ Translates an IP address to a physical address called a Media Access Control (MAC) address
+				□ Attackers sometimes respond to ARP addresses with their own MAC address to try to access information that is not meant for them
+			○ Internet Control Message Protocol (ICMP)
+				□ Often used to determine what nodes are active on a server
+				□ PING packet determines if a node is active
+			○ Dynamic Host Configuration Protocol (DHCP)
+				□ Allows nodes to move from network to network
+				□ A node will send a DHCP request when trying to connect to a new network
+					® The server responds with an IP address that the node uses to identify itself
+						◊ Router sends an IP address between starting and ending adress values, as well as any gateway, domain or DNS (Domain Name System) values.
+						◊ New node uses this to set up a LAN connection
+				□ Can be vulnerable to attacks that assign malicious IP addresses
+					® This can segment networks and redirect traffic away from legitimate nodes
+			○ Domain Name System (DNS) - Convenient and recognisable labels for devices
+				□ Simmilar to ARP, but at a higher level
+				□ Translates a domain name into an IP adress
+				□ Allows users to enter domain names, and then find the IP adress of the web server
+				□ Carries out the lookup and returns the IP adress
+				□ Attackers that compromise a DNS server can replace the valid IP adress with their own malicious servers
+				□ A corrupt DNS could redirect unsuspecting users directly to an attacker's computer
+- Internet Protocol (IP)
+		○ Most common network layer protocol used in networks
+		○ Introduced at a time when networking was small
+		○ Defines the route of a packer from sender to reciever
+		○ There are two versions of IP, and it is important to understand the shortcomings of the legacy version, and the advantages provided by the updated version
+	• IP Address - Identifies the networks use to route traffic
+		○ Initially were 32 bit numbers expresses as four 8 bit numbers from 0-255, separated by a full stop (eg: 192.168.0.10
+		○ With 32 bits, IP can identify 4.29 billion unique devices
+				□ ipconfic to see IP address
+			§ There are however 46 billion internet connected devices
+		○ IPv4 - Older version and is still used by many today, and will be around for a while to come
+			§ We ran out of IPv4 addresses years ago
+				□ There are more devices connected than possible IPv4 addresses
+		○ IPv6 - Newer available version and many people are transitioning to it
+- MAC Address - 48-bit address that identifies a network interface controller (NIC)
+		○ Helps administrators organise networks
+		○ Network Interface Controller (NIC) - A hardware device that connects a node to a network media
+			§ NIC's Vendor - assigns a unique MAC address to each device
+				□ It's is not hard to change a device's MAC adress to any other value
+				□ Attacker use MAC address changes to make their devices appear as a trusted device
+				□ ipconfig/all to see IP Configuration including MAC address/physical address
+	• Used to provide a physical device adress
+- Network Segmentation - When organisations sort their networks into groups of nodes called segments
+	• Can be sorted by:
+		○ Physical Location
+		○ Accounting
+		○ Production
+		○ Order Management
+	• Both MAC and IP addresses can be used to create network segments
+	• Network Segmentation can increase security by restricting communication within defined segments
+		○ For example, PCI DSS requires devices that handle payment must be separate from those that do not, and part of the PCI DSS assessment is validating proper network segmentation
+- CIDR Notation (Classless Inter-Domain Routing) - A way to express an IP address that involves a slash followed by a number (eg: 172.14.33.0/24 // 24 means that the first 24 bits represents the network, and the remaining bits represent the hosts
+	• Introduced to help define public networks of different sizes
+	• Makes it easer to understand a network's scope in a compact form
+	• Does not waste addresses like older addresses did
+	   Made up of two parts:
+			§ First part of address identifies a networks of multiple hosts
+			§ Rest of the address identifies unique hosts connected to a single network
+		○ Network Address
+		○ Host Address
+- Public IP Addresses
+	• Addresses that network devices use to route packets from network to network until packet reaches destination
+- Private IP Addresses
+	• Non routable // Routers will not forward a packet with a non-routable address to another network
+	• Allows organisations to build large internal networks without consuming any public IP address space
+	• Organisation only needs a single public IP address
+		○ All other IP addresses will come from a range of private addresses
+	• Different organisations can use the same private IP addresses because packets using the private IP addresses never leave that organisation
+		○ Need a way to translate private IP to public IP for packets that need to leave the organisation
+	  Commonly used IPv4 private networks
+		○ Smallest is 192.168.0.0 to 192.168.255.255
+			§ Can address 65,536 hosts
+		○ Medium sized is 172.16.0.0 to 172.31.255.255
+			§ Can address 1,048,576 hosts
+		○ Largest size is 10.0.0.0 to 10.255.255.255
+			§ Can address 16,777,216 host
+- Network Address Translation Protocol (NAT) 
+	• Protocol that allows packets in a private network to leave said network
+	• A border router will use the NAT protocol to replace the private IP address with a public IP address and add a note to its translation table
+		○ When the border router receives a response from the sent packet, it uses the note in its translation table to replace the destination IPv4 address with the correct private address and sends the packet on its way
+	• Makes it possible for private nodes to communicate with external nodes
+	• Makes it easier it hide true IP addresses from the outside world
+	• Makes continued use of IPv4 possible
+		○ Even with the lack of unique addresses
+- Network Security Architecture - How a network is organised to operate efficiently and resist interruptions
+		○ The main goal in building secure IT environments is to place enough obstacles between attackers and resources to make it difficult to carry out a successful attack
+	• Includes the devices and software that support normal operation and the devices and software that resist interruption due to attacks, failures or accidents.
+	• Should include devices and protocols that prevent, detect and resist attacks and provide redundancy to resilience to avoid or minimise interruption 
+	• Basic networks include nodes and media
+		○ Nodes consist of endpoints, servers and network devices
+		○ Media can be wired or wireless, however many networks appear both
+	• Networks that include security components will also contain network security devices, segmented networks, and redundant media to fulfill the resilience to interruption goal
+- Demilitarized Zone (DMZ) - Isolates internal resources from internet users
+	• Many organisations host websites that are accessible to the public via the internet, and also are connected to sensitive internal resources such as an internal database
+		○ Meant to allow easy access to the website, but not to the database
+	• Consists of at least 2 firewalls
+		○ One between the internet and the web server
+		○ Another between the webserver and the internal network/database
+- Virtualisation - The practice of running multiple operating systems simultaneously on a single physical  computer
+		○ Operating systems historically provided an interface between users and computing hardware
+	• Virtualised systems use a software program called the hypervisor to simulate physical hardware
+		○ This allows operating systems to function as if they were running on physical hardware
+	• Allows organisations to more fully utilise their physical hardware investment by running multiple virtual machines
+		○ Perhaps even running different operating systems at the same time to avoid investing in additional dedicated hardware
+	• Organisations can focus their IT investment on hardware capable of supporting multiple simultaneous virtual machines
+		○ Each of which could dynamically use only the necessary physical resources while leaving the rest for other virtual machines running on the same physical hardware
+	• Makes it easy to suspend a virtual machine and use it at a later time, perhaps on another device
+	• Also aids in building standardised virtual machines
+		○ Reduces the need to give new computers lots of software 
+- Cloud Computing - Servers that are easily accessed and services that clients can easily consume
+	• Made possible by virtualisation
+	• Implemented as collections of physical servers connected to the internet
+		○ Each one can host multiple virtual machines
+	• Private Cloud - Owned by a single organisation of consortium for use by their personnel
+	• Public Cloud - Virtual machines and environments that can be leased
+		○ Parts of the physical server capabilities are rented out to fill client needs
+- Honeypot - A deliberately insecure computer that is connected to the network
+	• Is meant to distract hackers by making themselves easy targets holding extra information, but really they are a diversion and are keeping other computers safe
+	• Honey pots are very helpful, but they should never be a replacement for a control since they don't technically provide any protection
+- Proxy Servers - A network device that is between two entities communicating on a server
+	• The proxy server will analyse the messages and often have rules that prevent unauthorised activity
+		○ A firewall is a type of proxy server that monitors between behaviour that is or isn't allowed, and then will prevent users' access
+- Intrusion Detection Systems (IDS) - Passive network device that observes packets and compares them to malicious activities that are stored in a database
+	• If the IDS finds a match then it could mean there is a possible attack, although the IDS cannot do anything in terms of protection other then trigger an alert
+- Intrusion Prevention Systems (IPS) - Does a similar thing to the IDS, except the IPS can take action
+	• IPS can do things such as:
+		○ Trigger an alert (same as IDS)
+		○ Block an IP address
+		○ Close a port
+		○ Take other actions
+- MAC Address Filtering - One of the most effective techniques to secure a wireless environment
+	• Unsecured wireless networks can be easy entry points for attackers
+	• MAC address filtering can make is so that only specific MAC addresses can access a server
+- Encryption Standards, SSID
+	• Limiting options through the wireless access point administration portal can make your wireless network more secure and less likely to be access points for attackers
+	• Wireless networks without encryption is an open door of an attack
+		○ Without encryption, wireless networks are completely vulnerable 
+		○ Anyone who connects to an unencrypted wireless network can view what other wireless users send and receive
+	• WEP - The least secure wireless encryption option
+		○ Do not use WEP!
+	• WPA3/WPA2 - Latest versions of WPA that also use AES encryption
+		○ WPA2 is considered a good choice for most situations, but if advanced security is required then WPA3 is recommended
+		○ They commonly work in personal mode which uses a pre-shared key that clients must know, or enterprise mode which uses a RADIUS server to manage connections
+	• SSID Broadcast - Disabling this will stop broadcasting the SSID
+		○ The wireless access point would usually broadcast the SSID to let other networks know that they exist - a practice of convivence
+			§ Disabling is a step in the direction to hide a network
+- Firewall - A network device that inspects packets and decides whether or not to allow them to go on their way
+		○ Name deprived from the brick walls that would stop fires from spreading
+		○ Firewalls now exist within multiple networking systems such as routers
+		○ Multiple hardened firewalls are a sold defence against attacks
+	• Packet Inspection Firewall - Most basic firewall that inspects the source address, target address, protocol and port number to determine if the traffic is authorised or not
+	• ACR (Access Control Rule) - A list of rules that a firewall will have to determine if a packet should be forwarded, rejected, or silently dropped
+		○ Dropping someone does not notify them that any action has happened which is better for the confidentiality of the network
+- Virtual Private Network (VPN)
+		○ Provide easy, secure and remote access to resources
+		○ Remote connections are more vulnerable to eavesdropping and attack
+		○ Many exchanges across a network remain unencrypted
+			§ They are targets for attack
+	• A solution to remote connections using in-the-clear communication
+		○ Establishes an end to end connection between an endpoint and a server within the internal network or an organisation and provides the ability to secure all traffic
+	• Ensures that all network traffic is encrypted before transmission along a tunnel
+	• Remote end decrypts the data
+	• The encryption/decryption process is transparent to the user and the server 
+	• Any attacker will only see encrypted packets
+	• People may use VPN services to bypass the internet connection point on public Wi-Fi network or their own ISP
+		○ The VPN encrypts all traffic from a user endpoint to the VPN service servers
+		○ This type of VPN avoids tracking website usage
+	• Others may use VPN services to support infrastructure remote connections
+		○ Such as personnel remotely connecting to the internal network of an organisation
+	• Popular VPN protocols:
+		○ Internet Key Exchange (IKEv2)
+		○ Layer 2 Tunnelling Protocol (L2TP)
+		○ Point-to-Point Tunnelling Protocol (PPTP)
+		○ Secure Socket Tunnelling Protocol (SSTP)
+	• Open Source VPN protocols
+		○ OpenVPN
+		○ Universal Windows Platform (UWP) VPN plugin
+- Network Access Controls (NAC)
+		○ The demand for secure remote access is continually growing
+	• A layer of security controls that limits access to protected network resources
+	• Implements controlled remote access through authentication and setting minimum device requirements including:
+		○ Device must be encrypted
+		○ Establishing a login passcode for the device
+		○ Relinquishing some or all management control to the organisation 
+	• Purpose is to define and enforce policies that restrict remote access to internal network resources
+	• NAC can help reduce the possibility of attacks using a remote access vector
