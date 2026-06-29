@@ -1,0 +1,179 @@
+-- MASTER CTF NOTES --
+
+* A collection of skills, commands, tricks, knowledge, etc... accquired when doing CTF challenges
+
+
+WEB EXPLOITATION
+
+CRYPTOGRAPHY
+
+REVERSE ENGINEERING
+
+	"static analysis" - reverse engineering technique that simply involves reading the code, using your mental model into your brain.
+
+	"dynamic analysis" - run the code and see what happens (catious of malware)
+
+FORENSICS & STEGANOGRAPHY
+
+	'exiftool [file]' - view metadata 
+
+	'xxd [file]' - print a hexdump of a binary file and ASCII preview (can't be used to edit though)
+
+	'bvi [file]' - can be used to edit the file data - :set memmove to enable editing and :w to save
+
+	'dd if=input_file.txt of=output_file.txt' - copy a file, designed for low level usage * can use 'cp file1 file2' for ordinary usage
+
+	'zsteg [file]' - detect hidden data inside .bmp or .png files
+
+	Sleuthkit (TSK - The Sleuth Kit)
+
+		These apply to all the layers, just with a different prefix
+		
+			_stat
+
+			_ls
+
+			_cat
+
+		Multimedia Layer: (mm)
+			
+			'mmls [disk_image]' - *view the partition layout of a disk image
+
+		Block Layer: (blk)
+
+			also has 'blkcalc'
+
+			'blkcat -o [byte_offset] [blk_number]' - read file based on blk number
+
+		Journal Layer: (j)
+
+			no _stat
+
+		Metadata Layer: (i) - inode = data structure that stores metadata
+
+			also has 'ifind'
+
+			'icat -o [byte_offset] [inode_number] - read file based on inode number
+
+			'istat -o [byte_offset] [inode_number]' - diplay metadata for specifc inode number
+
+		Filename Layer: (f)
+
+			no _stat, also has 'ffind'
+
+			'fls -o [byte_offset*]' - reads the highest level files like ls /
+
+			'fls -ro [byte_offset*]' - reads all the directories and files recursively like tree /
+
+			'fcat -o [byte_offset] [file location & name]' - reads the contents of a specific file based on it's name/location	
+
+					
+BINARY EXPLOITATION
+
+GENERAL SKILLS
+
+	'grep -r [search term] [directory]' - this reads all files in all directories in the directory and prints any line with the search term
+
+	'echo [base64 encoded string] | base64 -d' - base46 decode (use just '| base64' to encode)
+
+	'echo [hex string that means something in ASCII] | xxd -d -p' - hex --> ASCII
+
+	'tr -d '[target characters] < file.txt' - remove desired characters from a text file - tr is used to transform a text file, tr -d is for 'delete'
+
+	' | less' - useful for searching through or navigating long outputs
+
+	'cat [file with duplicate lines] | awk '!seen[$0]++' - prints out a file, but duplicate lines are only printed once
+
+	'nc -lvnp [port]' - set up a listener on desired port (skips DNS resolution and is verbose)
+
+	'strings [file] | grep ... ' search a file for something (e.g. a flag) - useful for pcap
+
+PYTHON
+
+	Python In CTFs Notes
+
+		'0x[hex]' - python's way of recognising hex, '0b[binary]' - python's way or recognising binary
+
+		'import math' for more complicated math functions (e.g. math.factorial())
+
+		strings (for e.g.) are objects - methods can be accessed with '.' - e.g. string.capitalise()
+
+		help([something]) - like a man interface for classes, functions, etc...
+
+		>>> variable - prints the variable (don't need to use print in the interpreter)
+
+		pwntools
+
+			'import pwn' - gives access to all the pwn functions
+			
+			'conn = pwn.remote('[ip or hostname]' [port])' - sets a connection to a variable (which acts as an object)
+
+			'line = conn.recv()' - recv() method waits to recieve a data (in binary) from the connection, this command catches that data as a variable 'line' (bytes) - recvline() will do the same but only recive one line
+
+			'conn.send([bytes])' - send bytes to the connection
+
+ARTIFICIAL INTELLIGENCE
+
+	CyLab AI Foundations I
+
+		Perception - defn: a computational model inspired by how neurons in biological brains work - foundation of neural networks
+			- Like a binary decision maker (a neuron that fires or doesn't based on input)
+			- 1D perception takes 1 input, 2D perception takes two, and so on... a decision boundary is the turning point where inputs result in the perception firing or not firing.
+				A line boundary is like a line that seperates the 2D cartisian plane where a co-ord represents a combination of inputs, where co-ords/input combos on one side result 
+				in the perception firing, and those on the other side result in it not firing. i.e. a 2D decision boundary
+			- A plane would do the same thing in a 3D perception, and the term 'hyperplane' is used to describe boundaries in higher dimensions
+			- Example of the mathematical logic that perceptions use
+
+			output = {1 if w.x+b >= 0} {0 otherwise}
+	
+				x = input (or inputs if multidimensional)
+							
+				w = weight - how much each input matters	
+
+				b = bias - shifts the boundary position
+
+				w.x+b -> weighted sum plus the bias
+
+			- Classification - defn: sorting things into categories (binary classification has two categories)
+				- Perceptions are perfect for binary classifications, but the right weight and bias must be found
+					- This can be done manually for smaller data sets
+					- Training is required for large data sets
+						defn: automatically finding the right weights and biases based on examples in the data
+						
+				 		Perception Learning Algorithm (how training works, conceptually)
+				 			1. Begin with random weight
+				 			2. Make predections and measure how many errors there are
+				 			3. Adjust the weights* slightly in a way that reduces errors
+				 			4. Repeat steps 2 and 3 until the errors stop decreasing (or reach zero)
+
+				 			NOTE: Perceptions can only solve linearly seperable problems (where a straight line, or hyperplane, can seperate the categories)
+
+				 				Famous example: XOR Problem
+
+				 					takes two binary digits (0 or 1) - equates to 0 if they are the same, equates to 1 if they are different
+
+				 				This limitation inspired the developement of neural networks - multiple perceptions combined together with the ability to solve non-linearly-seperable problems
+
+				 		* when adjusting the weights, how much you adjust them is called the Learning Rate (measured in steps)
+				 				- Learning rate is a hyperparameter: it's set before training begins
+				 			- Smaller learning rate (e.g. 0.01) is slow but stable
+				 			- Medium learning rate (e.g 0.1 - 0.5) is balanced
+				 			- Large learning rate (e.g. 1.0) is agressive and risks overshooting and oscilating
+
+		AI Modalities: 
+			- Assistents: primarly just answers questions and responds; they won't act unless a human tells them too
+			- Agents: take actions autonomously using tools and memory
+				- Agent actions can have input, so guardrails (e.g. human approval) make autonomy safer
+
+		Key Ethical Principles:			
+			
+			Transparency: People should understand how and why an AI system made a decision about them.
+
+			Accountability: Someone should be responsible when an AI system makes mistakes or causes harm.
+			
+			Fairness: AI systems should treat different groups equitably and not perpetuate discrimination.
+			
+			Verification: You should verify that an AI system actually does what you think it does. Trust is good; trust but verify is better.
+			
+			Understanding Limitations: Knowing what an AI system cannot do (like a perceptron failing on non-linearly-separable problems) is crucial for using it responsibly.
+			
