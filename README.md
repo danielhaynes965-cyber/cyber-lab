@@ -55,6 +55,6 @@ This project is licensed under the MIT License. See the `LICENSE` file for detai
 ## Contact
 
 - **Author:** Daniel Haynes  
-- **Alias:** *Xenithu* (username on platforms like THM)
+- **Alias:** *Xenithu* (username on most platforms)
 - **GitHub:** https://github.com/danielhaynes965-cyber  
 - **LinkedIn:** https://www.linkedin.com/in/daniel-h-506933392
