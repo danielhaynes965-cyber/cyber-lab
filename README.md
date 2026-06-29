@@ -12,25 +12,26 @@ cybersecurity-portfolio/
 ├── README.md
 ├── archive_thm/
 ├── utils_and_templates/
-└── ctf/
-    ├── binary_exploitation/
-    │   ├── sandbox/
-    │   └── writeups/
-    ├── cryptography/
-    │   ├── sandbox/
-    │   └── writeups/
-    ├── forensics/
-    │   ├── sandbox/
-    │   └── writeups/
-    ├── misc/                 
-    │   ├── sandbox/
-    │   └── writeups/
-    ├── reverse_engineering/
-    │   ├── sandbox/
-    │   └── writeups/
-    └── web_exploitation/
-        ├── sandbox/
-        └── writeups/
+├── ctf/
+│   ├── binary_exploitation/
+│   │   ├── sandbox/
+│   │   └── writeups/
+│   ├── cryptography/
+│   │   ├── sandbox/
+│   │   └── writeups/
+│   ├── forensics/
+│   │   ├── sandbox/
+│   │   └── writeups/
+│   ├── misc/                 
+│   │   ├── sandbox/
+│   │   └── writeups/
+│   ├── reverse_engineering/
+│   │   ├── sandbox/
+│   │   └── writeups/
+│   └── web_exploitation/
+│       ├── sandbox/
+│       └── writeups/
+└── study_notes/
 ```
 
 ## About This Repository
@@ -39,10 +40,12 @@ cybersecurity-portfolio/
     An archive of TryHackMe notes from when I first started learning cyber. These were made mainly to build the habbit of documentation.
 * **`ctf/`**
     The active training arena. Organized by domain, this contains all challenge materials and solutions for current CTF platforms (such as CyLabs) and live competitions.
-    * **`writeups/`**: Dedicated folders for complex, advanced challenges. Each challenge gets its own directory containing a brief `writeup.md`, and the solve script, as well as any downloaded challenge artifacts.
+    * **`writeups/`**: Dedicated folders for complex, advanced challenges. Each challenge gets its own directory containing a micro writeup, and the solve script, as well as any downloaded challenge artifacts.
     * **`sandbox/`**: The working directory for quick solves. A flat collection of fast Python scripts, loose notes, tool outputs, one-liners, etc...
 * **`utils_and_templates/`**
-    The competition toolkit. A repository of generic, reusable boilerplate scripts (e.g., automated SQL injection frameworks, RSA math templates, comprehensive nmap scan) designed to be accessible easily when solving challenges.
+    A repository of generic, reusable boilerplate scripts (e.g., automated SQL injection frameworks, RSA math templates, comprehensive nmap scan) designed to be accessible easily when solving challenges.
+* **`study_notes/`**
+	Where I take notes when studying materal (learning guides, youtube playlists, certificate study, etc...) - on this repo so I can access all my things in the same space. Some notes are 'cheat sheet' style, so useful to access during competitions.
 
 ## Ethical Notice
 
