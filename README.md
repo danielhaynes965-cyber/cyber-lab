@@ -3,15 +3,17 @@
 
 # Cybersecurity Portfolio & CTF Handbook
 
+A collection of CTF writeups, reusable tooling, scripts, and technical documentation developed throughout my cybersecurity learning.
+
 ## Repository Structure
 
 ```text
-cybersecurity-portfolio/
+cyber-lab/
 ├── .gitignore
 ├── LICENSE
 ├── README.md
-├── archive_thm/
-├── utils_and_templates/
+├── archive/
+│   └── tryhackme/
 ├── ctf/
 │   ├── binary_exploitation/
 │   │   ├── sandbox/
@@ -22,7 +24,7 @@ cybersecurity-portfolio/
 │   ├── forensics/
 │   │   ├── sandbox/
 │   │   └── writeups/
-│   ├── misc/                 
+│   ├── misc/
 │   │   ├── sandbox/
 │   │   └── writeups/
 │   ├── reverse_engineering/
@@ -31,21 +33,21 @@ cybersecurity-portfolio/
 │   └── web_exploitation/
 │       ├── sandbox/
 │       └── writeups/
-└── study_notes/
+└── utils/
 ```
 
 ## About This Repository
 
-+ **`archive_thm/`**
-    An archive of TryHackMe notes from when I first started learning cyber. These were made mainly to build the habbit of documentation.
+This repository serves as both my long-term cybersecurity knowledge base and my active CTF workspace.
+
++ **`archive/`**
+	Older material retained for reference. This currently contains my early TryHackMe notes, created while building good documentation habits and foundational cybersecurity knowledge.
 * **`ctf/`**
     The active training arena. Organized by domain, this contains all challenge materials and solutions for current CTF platforms (such as CyLabs) and live competitions.
     * **`writeups/`**: Dedicated folders for complex, advanced challenges. Each challenge gets its own directory containing a micro writeup, and the solve script, as well as any downloaded challenge artifacts.
     * **`sandbox/`**: The working directory for quick solves. A flat collection of fast Python scripts, loose notes, tool outputs, one-liners, etc...
-* **`utils_and_templates/`**
-    A repository of generic, reusable boilerplate scripts (e.g., automated SQL injection frameworks, RSA math templates, comprehensive nmap scan) designed to be accessible easily when solving challenges.
-* **`study_notes/`**
-	Where I take notes when studying materal (learning guides, youtube playlists, certificate study, etc...) - on this repo so I can access all my things in the same space. Some notes are 'cheat sheet' style, so useful to access during competitions.
+* **`utils/`**
+    A directory of generic, reusable boilerplate scripts (e.g., automated SQL injection frameworks, RSA math templates, comprehensive nmap scan) designed to be accessible easily when solving challenges.
 
 ## Ethical Notice
 

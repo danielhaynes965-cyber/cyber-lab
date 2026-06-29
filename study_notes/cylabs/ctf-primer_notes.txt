@@ -1,3 +1,0 @@
--- CTF-Primer Notes -- 
-
-* Notes taken when reading through the CTF-Primer, a comprehensive beginner's guide to CTF on CyLab Academy
