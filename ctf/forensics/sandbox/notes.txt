@@ -1,0 +1,5 @@
+Forensics notes:
+
+- when dealing with disk images, strings | grep can be a handy shortcut
+	- if looking for a decryption key used in a disk image, use strings | grep [encoded filename] | grep type of encoding
+- icat -o [bytes] [img] [inode] > file is an easy way to export from disk image
