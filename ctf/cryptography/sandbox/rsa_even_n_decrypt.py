@@ -13,5 +13,11 @@ d = pow(e, -1, phi_N)
   
 c = int(sys.argv[2])
 m = pow(c, d, N)
-flag = m.to_bytes(29)
+found_bytes = False
+while not found_bytes:
+    i = 1
+    try:
+        flag = m.to_bytes(i)
+    except:
+        i ++ 1
 print(flag)
