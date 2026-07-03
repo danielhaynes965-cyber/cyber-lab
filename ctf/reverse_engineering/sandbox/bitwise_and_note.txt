@@ -1,0 +1,1 @@
+r& is a bitwise operator that masks the first _ binary digits as 0. e.g. if 10010110 00001000 = x, then (x & 0xFF) = 8, since 0xFF = 1111111, and so the first 1111111 are masked to 00000000.
