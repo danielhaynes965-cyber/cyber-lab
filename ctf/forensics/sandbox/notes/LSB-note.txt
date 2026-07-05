@@ -1,0 +1,1 @@
+use zsteg to check for LSB steganography for BMP (bitmap) or PNG files

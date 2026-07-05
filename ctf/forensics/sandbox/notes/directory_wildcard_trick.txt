@@ -1,0 +1,1 @@
+r[directory]/* to do something to all the files in a directory, e.g. md5sum files/*
